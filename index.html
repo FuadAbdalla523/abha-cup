@@ -170,7 +170,7 @@
     initial:'H',
     c1:'#da2534',
     c2:'#7e131d',
-    logo:'assets/horseed.png'
+    logo:'./assets/horseed.png'
   },
 
   {
@@ -180,7 +180,7 @@
     initial:'HA',
     c1:'#2878ff',
     c2:'#123d9c',
-    logo:'assets/harmacad.png'
+    logo:'./assets/harmacad.png'
   },
 
   {
@@ -190,24 +190,160 @@
     initial:'DM',
     c1:'#1677ff',
     c2:'#0a3f9a',
-    logo:'assets/daf-iyo-miriq.png'
+    logo:'./assets/daf-iyo-miriq.png'
   }
 ];
 
 const matches = [
-  {id:1,stage:'group',group:1,date:'2026-10-08T16:00:00',home:'gorgor',away:'sitti',status:'completed',homeScore:5,awayScore:1,scorers:{gorgor:[['Xamdi',1],['Daciga',1],['Jamal',2],['Cabas',1]],sitti:[['Faysal',1]]}},
-  {id:2,stage:'group',group:2,date:'2026-10-09T16:00:00',home:'horseed',away:'harmacad',status:'completed',homeScore:2,awayScore:1,scorers:{horseed:[['Abdirahman',1],['Dadirow',1]],harmacad:[['Zubeer',1]]}},
-  {id:3,stage:'group',group:1,date:'2026-10-15T16:00:00',home:'nisa',away:'gorgor',status:'upcoming'},
-  {id:4,stage:'group',group:2,date:'2026-10-16T16:00:00',home:'daf-iyo-miriq',away:'horseed',status:'upcoming'},
-  {id:5,stage:'group',group:1,date:'2026-10-17T16:00:00',home:'sitti',away:'nisa',status:'upcoming'},
-  {id:6,stage:'group',group:2,date:'2026-10-22T16:00:00',home:'harmacad',away:'daf-iyo-miriq',status:'upcoming'},
-  {id:7,stage:'sf1',date:'2026-10-23T16:00:00',homeLabel:'1st Group 1',awayLabel:'2nd Group 2',status:'upcoming'},
-  {id:8,stage:'sf2',date:'2026-10-24T16:00:00',homeLabel:'1st Group 2',awayLabel:'2nd Group 1',status:'upcoming'},
-  {id:9,stage:'final',date:'2026-10-29T16:00:00',homeLabel:'Winner SF 1',awayLabel:'Winner SF 2',status:'upcoming'}
+
+  // GROUP 1 - COMPLETED
+  {
+    id:1,
+    stage:'group',
+    group:1,
+    date:'2026-10-08T16:00:00',
+    home:'gorgor',
+    away:'sitti',
+    status:'completed',
+    homeScore:5,
+    awayScore:1,
+    scorers:{
+      gorgor:[
+        ['Xamdi',1],
+        ['Daciga',1],
+        ['Jamal',2],
+        ['Cabaas',1]
+      ],
+      sitti:[
+        ['Faysal',1]
+      ]
+    }
+  },
+
+  // GROUP 2 - COMPLETED
+  {
+    id:2,
+    stage:'group',
+    group:2,
+    date:'2026-10-09T16:00:00',
+    home:'horseed',
+    away:'harmacad',
+    status:'completed',
+    homeScore:2,
+    awayScore:1,
+    scorers:{
+      horseed:[
+        ['Abdirahman',1],
+        ['Dadirow',1]
+      ],
+      harmacad:[
+        ['Zubeer',1]
+      ]
+    }
+  },
+
+  // GORGOR 4-2 NISA
+  {
+    id:3,
+    stage:'group',
+    group:1,
+    date:'2026-10-15T16:00:00',
+    home:'gorgor',
+    away:'nisa',
+    status:'completed',
+    homeScore:4,
+    awayScore:2,
+    scorers:{
+      gorgor:[
+        ['Xamdi',1],
+        ['Cabaas',2],
+        ['Daciga',1]
+      ],
+      nisa:[
+        ['Nure',1],
+        ['Cawaale',1]
+      ]
+    }
+  },
+
+  // HORSEED 2-1 DAF-IYO-MIRIQ
+  {
+    id:4,
+    stage:'group',
+    group:2,
+    date:'2026-10-16T16:00:00',
+    home:'horseed',
+    away:'daf-iyo-miriq',
+    status:'completed',
+    homeScore:2,
+    awayScore:1,
+    scorers:{
+      horseed:[
+        ['Cumar',1],
+        ['Ayaanle',1,'penalty']
+      ],
+      'daf-iyo-miriq':[
+        ['Shangari',1]
+      ]
+    }
+  },
+
+  // POSTPONED SATURDAY MATCH -> MONDAY
+  {
+    id:5,
+    stage:'group',
+    group:1,
+    date:'2026-10-19T16:00:00',
+    home:'sitti',
+    away:'nisa',
+    status:'upcoming'
+  },
+
+  // REMAINING GROUP MATCH
+  {
+    id:6,
+    stage:'group',
+    group:2,
+    date:'2026-10-22T16:00:00',
+    home:'harmacad',
+    away:'daf-iyo-miriq',
+    status:'upcoming'
+  },
+
+  // SEMI FINAL 1
+  {
+    id:7,
+    stage:'sf1',
+    date:'2026-10-23T16:00:00',
+    homeLabel:'1st Group 1',
+    awayLabel:'2nd Group 2',
+    status:'upcoming'
+  },
+
+  // SEMI FINAL 2
+  {
+    id:8,
+    stage:'sf2',
+    date:'2026-10-24T16:00:00',
+    homeLabel:'1st Group 2',
+    awayLabel:'2nd Group 1',
+    status:'upcoming'
+  },
+
+  // FINAL
+  {
+    id:9,
+    stage:'final',
+    date:'2026-10-29T16:00:00',
+    homeLabel:'Winner SF 1',
+    awayLabel:'Winner SF 2',
+    status:'upcoming'
+  }
+
 ];
 const i18n={
-  en:{subtitle:'Somali Students In Abha',official:'Official Tournament 2026',heroDesc:'Track fixtures, group standings, match results, player statistics and the road to the final in one clean tournament hub.',viewMatches:'View Matches',viewStandings:'Check Standings',latestResults:'Latest Results',openingMatches:'Opening Matches',allResults:'See all matches →',nextUp:'Next Up',nextMatch:'Next Match',goldenBoot:'Golden Boot',topScorer:'Top Scorer',fullStats:'Full player stats →',competition:'Competition',formatRules:'Format & Rules',standings:'Tournament Standings',standingsDesc:'Live group rankings based on completed matches. Top two qualify.',top2:'Top 2 qualify',matches:'Matches & Schedule',matchesDesc:'Completed results and every remaining fixture through the final.',bracket:'Knockout Bracket',bracketDesc:'Top two teams from each group advance to the semi-finals.',teams:'Participating Teams',teamsDesc:'Six teams competing across two groups.',stats:'Player Statistics',statsDesc:'Current tournament goalscorers and Golden Boot race.',footer:'Tournament hub for the Abha student community.',home:'Home',group:'Group',points:'Pts',played:'P',wins:'W',draws:'D',losses:'L',gf:'GF',ga:'GA',gd:'GD',team:'Team',all:'All',completed:'Completed',upcoming:'Upcoming',group1:'Group 1',group2:'Group 2',knockout:'Knockout',fullTime:'FULL TIME',semiFinal:'Semi-Final',grandFinal:'Grand Final',goals:'Goals',player:'Player',rules:[['Group Stage','2 groups of 3 teams.'],['Round Robin','Each team plays the other two once.'],['Qualification','Top 2 in each group advance.'],['Knockout','Crossed semi-finals, then the final.']],days:'Days',hours:'Hours',mins:'Mins',secs:'Secs'},
-  ar:{subtitle:'الطلاب الصوماليون في أبها',official:'البطولة الرسمية 2026',heroDesc:'تابع المباريات والترتيب والنتائج وإحصائيات اللاعبين والطريق إلى النهائي في منصة واحدة.',viewMatches:'عرض المباريات',viewStandings:'عرض الترتيب',latestResults:'أحدث النتائج',openingMatches:'مباريات الافتتاح',allResults:'عرض كل المباريات ←',nextUp:'القادم',nextMatch:'المباراة القادمة',goldenBoot:'الحذاء الذهبي',topScorer:'هداف البطولة',fullStats:'إحصائيات اللاعبين كاملة ←',competition:'نظام البطولة',formatRules:'النظام والقواعد',standings:'ترتيب البطولة',standingsDesc:'ترتيب المجموعات حسب المباريات المكتملة. يتأهل أول فريقين.',top2:'يتأهل أول فريقين',matches:'المباريات والجدول',matchesDesc:'النتائج المكتملة وجميع المباريات المتبقية حتى النهائي.',bracket:'الأدوار الإقصائية',bracketDesc:'يتأهل أول فريقين من كل مجموعة إلى نصف النهائي.',teams:'الفرق المشاركة',teamsDesc:'ستة فرق موزعة على مجموعتين.',stats:'إحصائيات اللاعبين',statsDesc:'ترتيب الهدافين الحالي وسباق الحذاء الذهبي.',footer:'منصة بطولة طلاب أبها.',home:'الرئيسية',group:'المجموعة',points:'ن',played:'ل',wins:'ف',draws:'ت',losses:'خ',gf:'له',ga:'عليه',gd:'فارق',team:'الفريق',all:'الكل',completed:'مكتملة',upcoming:'قادمة',group1:'المجموعة 1',group2:'المجموعة 2',knockout:'الإقصائيات',fullTime:'نهاية المباراة',semiFinal:'نصف النهائي',grandFinal:'النهائي',goals:'الأهداف',player:'اللاعب',rules:[['دور المجموعات','مجموعتان، في كل مجموعة 3 فرق.'],['دوري من دور واحد','يلعب كل فريق أمام الفريقين الآخرين مرة واحدة.'],['التأهل','يتأهل أول فريقين من كل مجموعة.'],['الإقصائيات','نصف نهائي متقاطع ثم المباراة النهائية.']],days:'يوم',hours:'ساعة',mins:'دقيقة',secs:'ثانية'}
+  en:{subtitle:'Somali Students In Abha',official:'Official Tournament 2026',heroDesc:'Track fixtures, group standings, match results, player statistics and the road to the final in one clean tournament hub.',viewMatches:'View Matches',viewStandings:'Check Standings',latestResults:'Latest Results',openingMatches:'Opening Matches',allResults:'See all matches →',nextUp:'Next Up',nextMatch:'Next Match',goldenBoot:'Golden Boot',topScorer:'Top Scorer',fullStats:'Full player stats →',competition:'Competition',formatRules:'Format & Rules',standings:'Tournament Standings',standingsDesc:'Live group rankings based on completed matches. Top two qualify.',top2:'Top 2 qualify',matches:'Matches & Schedule',matchesDesc:'Completed results and every remaining fixture through the final.',bracket:'Knockout Bracket',bracketDesc:'Top two teams from each group advance to the semi-finals.',teams:'Participating Teams',teamsDesc:'Six teams competing across two groups.',stats:'Player Statistics',statsDesc:'Current tournament goalscorers and Golden Boot race.',footer:'Tournament hub for the Abha student community.',home:'Home',group:'Group',points:'Pts',played:'P',wins:'W',draws:'D',losses:'L',gf:'GF',ga:'GA',gd:'GD',team:'Team',all:'All',completed:'Completed',upcoming:'Upcoming',group1:'Group 1',group2:'Group 2',knockout:'Knockout',fullTime:'FULL TIME',semiFinal:'Semi-Final',grandFinal:'Grand Final',goals:'Goals',player:'Player',penalty:'Penalty',rules:[['Group Stage','2 groups of 3 teams.'],['Round Robin','Each team plays the other two once.'],['Qualification','Top 2 in each group advance.'],['Knockout','Crossed semi-finals, then the final.']],days:'Days',hours:'Hours',mins:'Mins',secs:'Secs'},
+  ar:{subtitle:'الطلاب الصوماليون في أبها',official:'البطولة الرسمية 2026',heroDesc:'تابع المباريات والترتيب والنتائج وإحصائيات اللاعبين والطريق إلى النهائي في منصة واحدة.',viewMatches:'عرض المباريات',viewStandings:'عرض الترتيب',latestResults:'أحدث النتائج',openingMatches:'مباريات الافتتاح',allResults:'عرض كل المباريات ←',nextUp:'القادم',nextMatch:'المباراة القادمة',goldenBoot:'الحذاء الذهبي',topScorer:'هداف البطولة',fullStats:'إحصائيات اللاعبين كاملة ←',competition:'نظام البطولة',formatRules:'النظام والقواعد',standings:'ترتيب البطولة',standingsDesc:'ترتيب المجموعات حسب المباريات المكتملة. يتأهل أول فريقين.',top2:'يتأهل أول فريقين',matches:'المباريات والجدول',matchesDesc:'النتائج المكتملة وجميع المباريات المتبقية حتى النهائي.',bracket:'الأدوار الإقصائية',bracketDesc:'يتأهل أول فريقين من كل مجموعة إلى نصف النهائي.',teams:'الفرق المشاركة',teamsDesc:'ستة فرق موزعة على مجموعتين.',stats:'إحصائيات اللاعبين',statsDesc:'ترتيب الهدافين الحالي وسباق الحذاء الذهبي.',footer:'منصة بطولة طلاب أبها.',home:'الرئيسية',group:'المجموعة',points:'ن',played:'ل',wins:'ف',draws:'ت',losses:'خ',gf:'له',ga:'عليه',gd:'فارق',team:'الفريق',all:'الكل',completed:'مكتملة',upcoming:'قادمة',group1:'المجموعة 1',group2:'المجموعة 2',knockout:'الإقصائيات',fullTime:'نهاية المباراة',semiFinal:'نصف النهائي',grandFinal:'النهائي',goals:'الأهداف',player:'اللاعب',penalty:'ركلة جزاء',rules:[['دور المجموعات','مجموعتان، في كل مجموعة 3 فرق.'],['دوري من دور واحد','يلعب كل فريق أمام الفريقين الآخرين مرة واحدة.'],['التأهل','يتأهل أول فريقين من كل مجموعة.'],['الإقصائيات','نصف نهائي متقاطع ثم المباراة النهائية.']],days:'يوم',hours:'ساعة',mins:'دقيقة',secs:'ثانية'}
 };
 let lang='en',currentView='home',matchFilter='all';
 const navItems=[['home','home'],['standings','standings'],['matches','matches'],['bracket','bracket'],['teams','teams'],['stats','stats']];
@@ -227,11 +363,11 @@ function renderHome(){const done=matches.filter(m=>m.status==='completed');docum
 function renderStandings(){document.getElementById('standingsGrid').innerHTML=[1,2].map(g=>{const rows=calcStandings(g);return `<div class="panel standings-card"><div class="group-head"><h3>${t('group')} ${g}</h3><span class="group-chip">${teams.filter(x=>x.group===g).map(x=>x.name).join(' • ')}</span></div><div class="table-wrap"><table class="table"><thead><tr><th>#</th><th>${t('team')}</th><th>${t('played')}</th><th>${t('wins')}</th><th>${t('draws')}</th><th>${t('losses')}</th><th>${t('gf')}</th><th>${t('ga')}</th><th>${t('gd')}</th><th>${t('points')}</th></tr></thead><tbody>${rows.map((r,i)=>`<tr class="${i<2?'qualify':''}"><td><span class="pos">${i+1}</span></td><td><div class="team-cell">${teamBadge(r.team)}<span>${r.team.name}</span></div></td><td>${r.p}</td><td>${r.w}</td><td>${r.d}</td><td>${r.l}</td><td>${r.gf}</td><td>${r.ga}</td><td>${r.gd>0?'+'+r.gd:r.gd}</td><td><b>${r.pts}</b></td></tr>`).join('')}</tbody></table></div></div>`}).join('')}
 function renderFilters(){const filters=[['all','all'],['completed','completed'],['upcoming','upcoming'],['g1','group1'],['g2','group2'],['ko','knockout']];document.getElementById('filters').innerHTML=filters.map(([id,k])=>`<button class="filter-btn ${matchFilter===id?'active':''}" onclick="setFilter('${id}')">${t(k)}</button>`).join('')}
 function setFilter(f){matchFilter=f;renderFilters();renderMatches()}
-function renderMatches(){let list=[...matches];if(matchFilter==='completed')list=list.filter(m=>m.status==='completed');if(matchFilter==='upcoming')list=list.filter(m=>m.status==='upcoming');if(matchFilter==='g1')list=list.filter(m=>m.group===1);if(matchFilter==='g2')list=list.filter(m=>m.group===2);if(matchFilter==='ko')list=list.filter(m=>m.stage!=='group');document.getElementById('matchesGrid').innerHTML=list.map(m=>{const h=m.home?team(m.home):null,a=m.away?team(m.away):null;const completed=m.status==='completed';const hp=h?h.name:m.homeLabel,ap=a?a.name:m.awayLabel;let scorer='';if(completed){const hs=(m.scorers[m.home]||[]).map(x=>x[0]+(x[1]>1?` ×${x[1]}`:'')).join(', '),as=(m.scorers[m.away]||[]).map(x=>x[0]+(x[1]>1?` ×${x[1]}`:'')).join(', ');scorer=`<div class="scorer-preview">⚽ ${hs}<br>⚽ ${as}</div>`}return `<div class="card match-card" ${completed?`onclick="openMatch(${m.id})"`:''}><div class="match-meta"><span>${stageName(m)} • ${fmtDate(m.date)}</span><span class="status ${completed?'ft':'upcoming'}">${completed?t('fullTime'):'4:00 PM'}</span></div><div class="match-row"><div class="match-team">${h?teamBadge(h):''}<b>${hp}</b></div><div class="${completed?'big-score':'upcoming-vs'}">${completed?`${m.homeScore}<span class="dash">-</span>${m.awayScore}`:'VS'}</div><div class="match-team">${a?teamBadge(a):''}<b>${ap}</b></div></div>${scorer}</div>`}).join('')}
+function renderMatches(){let list=[...matches];if(matchFilter==='completed')list=list.filter(m=>m.status==='completed');if(matchFilter==='upcoming')list=list.filter(m=>m.status==='upcoming');if(matchFilter==='g1')list=list.filter(m=>m.group===1);if(matchFilter==='g2')list=list.filter(m=>m.group===2);if(matchFilter==='ko')list=list.filter(m=>m.stage!=='group');document.getElementById('matchesGrid').innerHTML=list.map(m=>{const h=m.home?team(m.home):null,a=m.away?team(m.away):null;const completed=m.status==='completed';const hp=h?h.name:m.homeLabel,ap=a?a.name:m.awayLabel;let scorer='';if(completed){const formatScorer=x=>x[0]+(x[1]>1?` ×${x[1]}`:'')+(x[2]?` (${t(x[2])})`:'');const hs=(m.scorers[m.home]||[]).map(formatScorer).join(', '),as=(m.scorers[m.away]||[]).map(formatScorer).join(', ');scorer=`<div class="scorer-preview">⚽ ${hs}<br>⚽ ${as}</div>`}return `<div class="card match-card" ${completed?`onclick="openMatch(${m.id})"`:''}><div class="match-meta"><span>${stageName(m)} • ${fmtDate(m.date)}</span><span class="status ${completed?'ft':'upcoming'}">${completed?t('fullTime'):'4:00 PM'}</span></div><div class="match-row"><div class="match-team">${h?teamBadge(h):''}<b>${hp}</b></div><div class="${completed?'big-score':'upcoming-vs'}">${completed?`${m.homeScore}<span class="dash">-</span>${m.awayScore}`:'VS'}</div><div class="match-team">${a?teamBadge(a):''}<b>${ap}</b></div></div>${scorer}</div>`}).join('')}
 function renderBracket(){document.getElementById('bracketWrap').innerHTML=`<div class="bracket-grid"><div class="bracket-stage"><h4>${t('semiFinal')}s</h4>${[matches[6],matches[7]].map((m,i)=>`<div class="bracket-box"><div class="bracket-date"><span>${t('semiFinal')} ${i+1}</span><span>${fmtDate(m.date)} • 4:00 PM</span></div><div class="slot"><span>${m.homeLabel}</span><span>—</span></div><div class="slot"><span>${m.awayLabel}</span><span>—</span></div></div>`).join('')}</div><div><div class="bracket-line"></div></div><div class="bracket-stage"><h4>${t('grandFinal')}</h4><div class="bracket-box final"><div class="bracket-date"><span>${t('grandFinal')}</span><span>${fmtDate(matches[8].date)} • 4:00 PM</span></div><div class="slot"><span>${matches[8].homeLabel}</span><span>—</span></div><div class="slot"><span>${matches[8].awayLabel}</span><span>—</span></div></div></div></div>`}
 function renderTeams(){document.getElementById('teamsGrid').innerHTML=teams.map(x=>{const r=calcStandings(x.group).find(y=>y.team.id===x.id);return `<div class="card team-card"><div class="team-card-top">${teamBadge(x,'')}<span class="pts-badge">${r.pts} ${t('points')}</span></div><h3>${x.name}</h3><p>${t('group')} ${x.group}</p><div class="team-record"><div><b>${r.p}</b><span>${t('played')}</span></div><div><b>${r.w}</b><span>${t('wins')}</span></div><div><b>${r.gf}</b><span>${t('gf')}</span></div><div><b>${r.ga}</b><span>${t('ga')}</span></div></div></div>`}).join('')}
 function renderStats(){document.getElementById('scorersTable').innerHTML=scorerList().map((p,i)=>`<div class="scorer-row"><div class="rank ${i<3?'top':''}">${i+1}</div><div class="player-name">${p.name}</div><div class="player-team">${teamBadge(p.team)}<span>${p.team.name}</span></div><div class="goals">${p.goals}</div></div>`).join('')}
-function openMatch(id){const m=matches.find(x=>x.id===id);if(!m||m.status!=='completed')return;const h=team(m.home),a=team(m.away);const list=(tid)=>m.scorers[tid].map(([n,g])=>`<div><span>${n}</span><b>${g>1?'×'+g:'⚽'}</b></div>`).join('');document.getElementById('modalContent').innerHTML=`<div class="eyebrow">${stageName(m)} • ${fmtDate(m.date)}</div><div class="modal-teams"><div>${teamBadge(h)}<b>${h.name}</b></div><div class="vs">${t('fullTime')}</div><div>${teamBadge(a)}<b>${a.name}</b></div></div><div class="modal-score">${m.homeScore} - ${m.awayScore}</div><div class="scorers"><div class="scorer-box"><h5>${h.name}</h5>${list(h.id)}</div><div class="scorer-box"><h5>${a.name}</h5>${list(a.id)}</div></div>`;document.getElementById('matchModal').classList.add('open')}
+function openMatch(id){const m=matches.find(x=>x.id===id);if(!m||m.status!=='completed')return;const h=team(m.home),a=team(m.away);const list=(tid)=>(m.scorers[tid]||[]).map(([n,g,note])=>`<div><span>${n}${note?` (${t(note)})`:''}</span><b>${g>1?'×'+g:'⚽'}</b></div>`).join('');document.getElementById('modalContent').innerHTML=`<div class="eyebrow">${stageName(m)} • ${fmtDate(m.date)}</div><div class="modal-teams"><div>${teamBadge(h)}<b>${h.name}</b></div><div class="vs">${t('fullTime')}</div><div>${teamBadge(a)}<b>${a.name}</b></div></div><div class="modal-score">${m.homeScore} - ${m.awayScore}</div><div class="scorers"><div class="scorer-box"><h5>${h.name}</h5>${list(h.id)}</div><div class="scorer-box"><h5>${a.name}</h5>${list(a.id)}</div></div>`;document.getElementById('matchModal').classList.add('open')}
 function closeModal(){document.getElementById('matchModal').classList.remove('open')}
 function updateCountdown(){const el=document.getElementById('countdown');if(!el)return;const next=matches.find(m=>m.status==='upcoming');let d=new Date(next.date)-new Date();if(d<0)d=0;const sec=Math.floor(d/1000),days=Math.floor(sec/86400),hrs=Math.floor(sec%86400/3600),mins=Math.floor(sec%3600/60),secs=sec%60;el.innerHTML=[[days,t('days')],[hrs,t('hours')],[mins,t('mins')],[secs,t('secs')]].map(x=>`<div><b>${String(x[0]).padStart(2,'0')}</b><span>${x[1]}</span></div>`).join('')}
 function renderAll(){renderNav();renderHome();renderStandings();renderFilters();renderMatches();renderBracket();renderTeams();renderStats()}
